@@ -6,7 +6,7 @@ metadata:
   labels:
     team: nada
 spec:
-  image: ghcr.io/navikt/nada/test-image:v20
+  image: ghcr.io/navikt/nada/test-image:v25
   port: 8080
   replicas:
     min: 2
@@ -17,8 +17,10 @@ spec:
       value: "/etc/pki/tls/cacert.pem"
     - name: HOST
       value: storage.googleapis.com
+    - name: BUCKET
+      value: data.knada.io
   ingresses:
-    - https://nada.ekstern.dev.nav.no
+    - https://nada.ekstern.dev.nav.no/datafortellinger
   resources:
     limits:
       cpu: 400m
@@ -26,8 +28,3 @@ spec:
     requests:
       cpu: 50m
       memory: 128Mi
-  accessPolicy:
-    outbound:
-      external:
-        - host: cdn.nav.no
-        - host: data.nav.no

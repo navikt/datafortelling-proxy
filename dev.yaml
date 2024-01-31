@@ -1,4 +1,3 @@
-host: storage.googleapis.com/data.knada.io
+host: storage.googleapis.com
 ingress:
   - https://nada.ekstern.dev.nav.no
-env: dev-gcp
