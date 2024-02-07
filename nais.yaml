@@ -21,6 +21,7 @@ spec:
       value: data.knada.io
   ingresses:
     - https://nada.ekstern.dev.nav.no/datafortellinger
+    - https://data.ekstern.dev.nav.no/datafortellinger
   resources:
     limits:
       cpu: 400m
