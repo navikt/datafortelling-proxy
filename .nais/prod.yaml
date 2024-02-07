@@ -1,3 +1,3 @@
 bucket: nada-ekstern-markedsplass-prod
 ingress:
-  - https://data.nav.no/datafortellinger
+  - https://data.nav.no/fortelling
