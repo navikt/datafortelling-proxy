@@ -1,0 +1,54 @@
+name: Build, push, and deploy
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+ contents: read
+ id-token: write
+
+jobs:
+  build:
+    name: Build and push Docker container
+    runs-on: ubuntu-latest
+    outputs:
+      image: ${{ steps.docker-build-push.outputs.image }}
+    steps:
+    - uses: actions/checkout@v4
+    - name: Push docker image to GAR
+      uses: nais/docker-build-push@v0
+      id: docker-build-push
+      with:
+        team: nada
+        identity_provider: ${{ secrets.NAIS_WORKLOAD_IDENTITY_PROVIDER }}
+        project_id: ${{ vars.NAIS_MANAGEMENT_PROJECT_ID }}
+
+  deploy-dev:
+    name: Deploy dev
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: nais/deploy/actions/deploy@v2
+      env:
+        CLUSTER: dev-gcp
+        RESOURCE: .nais/nais.yaml
+        VARS: .nais/dev.yaml
+        VAR: image=${{ needs.build.outputs.image }}
+
+  deploy-prod:
+    name: Deploy prod
+    needs: 
+      - build
+      - deploy-dev
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: nais/deploy/actions/deploy@v2
+      env:
+        CLUSTER: prod-gcp
+        RESOURCE: .nais/nais.yaml
+        VARS: .nais/prod.yaml
+        VAR: image=${{ needs.build.outputs.image }}

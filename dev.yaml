@@ -1,3 +1,0 @@
-host: storage.googleapis.com
-ingress:
-  - https://nada.ekstern.dev.nav.no

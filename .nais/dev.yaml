@@ -1,0 +1,3 @@
+bucket: nada-ekstern-markedsplass-dev
+ingress:
+  - https://data.ekstern.dev.nav.no/datafortellinger

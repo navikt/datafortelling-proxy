@@ -1,26 +1,26 @@
 apiVersion: "nais.io/v1alpha1"
 kind: "Application"
 metadata:
-  name: dmp-ekstern
+  name: datafortelling-proxy
   namespace: nada
   labels:
     team: nada
 spec:
-  image: ghcr.io/navikt/nada/test-image:v25
+  image: {{image}}
   port: 8080
   replicas:
     min: 2
     max: 3
     cpuThresholdPercentage: 70
   env:
-    - name: CERT_PATH
-      value: "/etc/pki/tls/cacert.pem"
     - name: HOST
       value: storage.googleapis.com
     - name: BUCKET
-      value: data.knada.io
+      value: {{bucket}}
   ingresses:
-    - https://nada.ekstern.dev.nav.no/datafortellinger
+  {{#each ingress}}
+    - {{.}}
+  {{/each}}
   resources:
     limits:
       cpu: 400m
