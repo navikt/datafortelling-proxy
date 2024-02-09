@@ -1,0 +1,68 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: https://data.nav.no/fortelling/ki/$2
+  labels:
+    team: nada
+  name: ki-story-redirect
+  namespace: nada
+spec:
+  ingressClassName: nais-ingress-external
+  rules:
+    - host: data.nav.no
+      http:
+        paths:
+        - path: /ki(/|$)(.*)?
+          pathType: ImplementationSpecific
+          backend:
+            service:
+              name: datafortelling-proxy
+              port:
+                number: 80
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: https://data.nav.no/fortelling/omverdensanalyse/$2
+  labels:
+    team: nada
+  name: omverdensanalyse-story-redirect
+  namespace: nada
+spec:
+  ingressClassName: nais-ingress-external
+  rules:
+    - host: data.nav.no
+      http:
+        paths:
+        - path: /omverdensanalyse(/|$)(.*)?
+          pathType: ImplementationSpecific
+          backend:
+            service:
+              name: datafortelling-proxy
+              port:
+                number: 80
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: https://data.nav.no/fortelling/utviklingstrekkfolketrygden/$2
+  labels:
+    team: nada
+  name: utviklingstrekkfolketrygden-story-redirect
+  namespace: nada
+spec:
+  ingressClassName: nais-ingress-external
+  rules:
+    - host: data.nav.no
+      http:
+        paths:
+        - path: /utviklingstrekkfolketrygden(/|$)(.*)?
+          pathType: ImplementationSpecific
+          backend:
+            service:
+              name: datafortelling-proxy
+              port:
+                number: 80
