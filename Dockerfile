@@ -1,4 +1,4 @@
-FROM haproxy:3.3.8-alpine3.23
+FROM haproxy:3.3.10-alpine3.23
 
 USER root
 
