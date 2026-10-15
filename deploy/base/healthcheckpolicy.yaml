@@ -13,7 +13,6 @@ spec:
     healthyThreshold: 1
     logConfig:
       enabled: true
-    timeoutSec: 15
   targetRef:
     group: ""
     kind: Service
