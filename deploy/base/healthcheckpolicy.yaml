@@ -7,7 +7,7 @@ spec:
   default:
     config:
       httpHealthCheck:
-        port: 80
+        port: 8080
         requestPath: /fortelling/health
       type: HTTP
     healthyThreshold: 1
