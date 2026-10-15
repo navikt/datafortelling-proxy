@@ -4,6 +4,8 @@ metadata:
   name: datastory-proxy
   namespace: datastories
 spec:
+  hostnames:
+  - <replace>
   parentRefs:
   - group: gateway.networking.k8s.io
     kind: Gateway
