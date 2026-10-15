@@ -31,7 +31,7 @@ spec:
           value: storage.googleapis.com
         - name: BUCKET
           value: nada-ekstern-markedsplass-prod
-        image: europe-west1-docker.pkg.dev/nav-data-images-prod/dataplattform-infra/datafortelling-proxy:2026.10.08-11.35 
+        image: europe-west1-docker.pkg.dev/nav-data-images-prod/dataplattform-infra/datafortelling-proxy:manuell
         ports:
         - containerPort: 8080
           name: http
