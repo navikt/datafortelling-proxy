@@ -16,9 +16,11 @@ spec:
     metadata:
       labels:
         app: datastory-proxy
-        team: nada
       name: datastory-proxy
     spec:
+      selector:
+        matchLabels:
+          app: datastory-proxy
       containers:
       - name: datastory-proxy
         env:
