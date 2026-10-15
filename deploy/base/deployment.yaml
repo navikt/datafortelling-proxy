@@ -21,6 +21,7 @@ spec:
         app: datastory-proxy
       name: datastory-proxy
     spec:
+      serviceAccountName: datastory-proxy
       containers:
       - name: datastory-proxy
         env:

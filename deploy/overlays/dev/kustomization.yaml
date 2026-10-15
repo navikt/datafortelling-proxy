@@ -6,3 +6,4 @@ resources:
 
 patches:
   - path: httproute.patch.yaml
+  - path: service-account.patch.yaml
