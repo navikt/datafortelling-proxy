@@ -3,4 +3,4 @@ kind: Kustomization
 namespace: datastories
 
 patches:
-  - httproute.patch.yaml
+  - path: httproute.patch.yaml
