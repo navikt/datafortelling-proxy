@@ -6,7 +6,6 @@ metadata:
   name: datastory-proxy
   namespace: datastories
 spec:
-  serviceAccountName: datastory-proxy
   replicas: 2
   strategy:
     rollingUpdate:
