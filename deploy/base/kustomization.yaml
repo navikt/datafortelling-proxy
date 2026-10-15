@@ -4,9 +4,9 @@ namespace: datastories
 
 resources:
   - namespace.yaml
+  - httproute.yaml
   - deployment.yaml
   - service-account.yaml
   - service.yaml
   - deployment.yaml
   - healthcheckpolicy.yaml
-  - httproute.yaml

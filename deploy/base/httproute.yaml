@@ -5,7 +5,7 @@ metadata:
   namespace: datastories
 spec:
   hostnames:
-  - <replace>
+  - fortellinger.dev.data.nav.no
   parentRefs:
   - group: gateway.networking.k8s.io
     kind: Gateway
