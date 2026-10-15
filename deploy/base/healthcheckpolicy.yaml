@@ -1,0 +1,20 @@
+apiVersion: networking.gke.io/v1
+kind: HealthCheckPolicy
+metadata:
+  name: datastory-proxy
+  namespace: datastories
+spec:
+  default:
+    config:
+      httpHealthCheck:
+        port: 80
+        requestPath: /fortelling/health
+      type: HTTP
+    healthyThreshold: 1
+    logConfig:
+      enabled: true
+    timeoutSec: 15
+  targetRef:
+    group: ""
+    kind: Service
+    name: datastory-proxy

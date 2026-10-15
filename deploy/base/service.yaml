@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: datastory-proxy
+  name: datastory-proxy
+  namespace: datastories
+spec:
+  ports:
+  - name: http
+    port: 80
+    protocol: TCP
+    targetPort: http
+  selector:
+    app: datastory-proxy
+  type: ClusterIP
