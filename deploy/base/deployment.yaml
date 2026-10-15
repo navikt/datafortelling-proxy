@@ -12,15 +12,15 @@ spec:
       maxSurge: 25%
       maxUnavailable: 0
     type: RollingUpdate
+  selector:
+    matchLabels:
+      app: datastory-proxy
   template:
     metadata:
       labels:
         app: datastory-proxy
       name: datastory-proxy
     spec:
-      selector:
-        matchLabels:
-          app: datastory-proxy
       containers:
       - name: datastory-proxy
         env:
