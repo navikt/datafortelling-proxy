@@ -6,6 +6,5 @@ resources:
   - namespace.yaml
   - httproute.yaml
   - deployment.yaml
-  - service-account.yaml
   - service.yaml
   - healthcheckpolicy.yaml
