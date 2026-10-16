@@ -5,8 +5,9 @@ USER root
 RUN apk --no-cache add ca-certificates \
   && update-ca-certificates
 
-USER haproxy
+COPY haproxy.cfg /usr/local/etc/haproxy/haproxy.cfg
+COPY gcp-auth.lua /usr/local/etc/haproxy/gcp-auth.lua
 
-ADD haproxy.cfg /usr/local/etc/haproxy/haproxy.cfg
+USER haproxy
 
 CMD ["haproxy", "-f", "/usr/local/etc/haproxy/haproxy.cfg"]
