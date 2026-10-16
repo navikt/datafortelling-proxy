@@ -3,7 +3,7 @@ name: Build, push, and deploy
 on:
   push:
     branches:
-      - main
+      - finnes-ikke
 
 permissions:
  contents: read
