@@ -12,4 +12,4 @@ resources:
 
 images:
 - name: artifacts.data.nav.no/ghcr/navikt/datafortelling-proxy
-  newName: "20261103103846"
+  newName: "20261103104004"
