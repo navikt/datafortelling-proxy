@@ -1,6 +1,6 @@
 FROM haproxy:3.4.6-alpine3.24
 
-LABEL org.opencontainers.image.source="https://github.com"
+LABEL org.opencontainers.image.source="https://github.com/navikt/datafortelling-proxy"
 
 USER root
 
