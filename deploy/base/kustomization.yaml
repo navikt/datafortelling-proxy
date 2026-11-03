@@ -14,4 +14,4 @@ images:
 - name: artifacts.data.nav.no/ghcr/datafortelling-proxy
   newTag: manuell2
 - name: artifacts.data.nav.no/ghcr/navikt/datafortelling-proxy
-  newName: "20261103102120"
+  newName: "20261103102853"
