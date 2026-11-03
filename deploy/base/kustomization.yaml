@@ -3,13 +3,15 @@ kind: Kustomization
 namespace: datastories
 
 resources:
-  - namespace.yaml
-  - httproute.yaml
-  - deployment.yaml
-  - service.yaml
-  - healthcheckpolicy.yaml
-  - service-account.yaml
+- namespace.yaml
+- httproute.yaml
+- deployment.yaml
+- service.yaml
+- healthcheckpolicy.yaml
+- service-account.yaml
 
 images:
-  - name: artifacts.data.nav.no/ghcr/datafortelling-proxy
-    newTag: manuell2
+- name: artifacts.data.nav.no/ghcr/datafortelling-proxy
+  newTag: manuell2
+- name: artifacts.data.nav.no/ghcr/navikt/datafortelling-proxy
+  newName: "20261103102120"
