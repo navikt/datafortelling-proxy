@@ -13,4 +13,4 @@ resources:
 images:
 - name: artifacts.data.nav.no/ghcr/navikt/datafortelling-proxy
   newName: artifacts.data.nav.no/ghcr/navikt/datafortelling-proxy
-  newTag: "20261103113911"
+  newTag: "20261103120446"
