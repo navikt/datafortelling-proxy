@@ -9,3 +9,7 @@ resources:
   - service.yaml
   - healthcheckpolicy.yaml
   - service-account.yaml
+
+images:
+  - name: artifacts.data.nav.no/ghcr/datafortelling-proxy
+    newTag: manuell2
